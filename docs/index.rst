@@ -33,11 +33,16 @@ Build Status
 
 |Pypi|
 
-Requirements
+Dependencies
 ------------
 
 -  watson-common
 -  watson-di (for test coverage, and decorator usage)
+
+Installation
+------------
+
+``pip install watson-cache``
 
 Testing
 -------
