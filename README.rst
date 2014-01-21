@@ -18,7 +18,7 @@ Docs <http://watson-cache.readthedocs.org/>`__.
 Build Status
 ^^^^^^^^^^^^
 
-|Build Status| |Coverage Status| |Pypi|
+|Build Status| |Coverage Status| |Version| |Downloads| |Licence|
 
 Installation
 ------------
@@ -30,6 +30,7 @@ Dependencies
 
 -  watson-common
 -  watson-di (for test coverage, and decorator usage)
+-  python3-memcached
 
 Todo
 ----
@@ -37,9 +38,13 @@ Todo
 -  Add SqlAlchemy based storage
 -  Add Redis based storage
 
-.. |Build Status| image:: https://api.travis-ci.org/bespohk/watson-cache.png?branch=master
-   :target: https://travis-ci.org/bespohk/watson-cache
+.. |Build Status| image:: https://api.travis-ci.org/Bespohk/watson-cache.png?branch=master
+   :target: https://travis-ci.org/Bespohk/watson-cache
 .. |Coverage Status| image:: https://coveralls.io/repos/bespohk/watson-cache/badge.png
    :target: https://coveralls.io/r/bespohk/watson-cache
-.. |Pypi| image:: https://pypip.in/v/watson-cache/badge.png
-   :target: https://crate.io/packages/watson-cache/
+.. |Version| image:: https://pypip.in/v/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/
+.. |Downloads| image:: https://pypip.in/d/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/
+.. |Licence| image:: https://pypip.in/license/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/

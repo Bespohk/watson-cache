@@ -4,9 +4,6 @@ pytest-cov
 coverage
 coveralls
 
-# Other
-python3-memcached
-
 # Watson
 watson-common >= 1.0.0
 watson-di >= 1.0.0  # only required for tests

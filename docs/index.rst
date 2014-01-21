@@ -23,21 +23,14 @@ Also contains a decorator that can be used within the
 Build Status
 ------------
 
-+-----------+------------------+---------------------+
-| Branch    | Status           | Coverage            |
-+===========+==================+=====================+
-| Master    | |Build StatusM|  | |Coverage Status|   |
-+-----------+------------------+---------------------+
-| Develop   | |Build StatusD|  |                     |
-+-----------+------------------+---------------------+
-
-|Pypi|
+|Build Status| |Coverage Status| |Version| |Downloads| |Licence|
 
 Dependencies
 ------------
 
 -  watson-common
 -  watson-di (for test coverage, and decorator usage)
+-  python3-memcached
 
 Installation
 ------------
@@ -61,11 +54,13 @@ Table of Contents
 
 .. include:: toc.rst.inc
 
+.. |Build Status| image:: https://api.travis-ci.org/Bespohk/watson-cache.png?branch=master
+   :target: https://travis-ci.org/Bespohk/watson-cache
 .. |Coverage Status| image:: https://coveralls.io/repos/bespohk/watson-cache/badge.png
    :target: https://coveralls.io/r/bespohk/watson-cache
-.. |Build StatusD| image:: https://api.travis-ci.org/bespohk/watson-cache.png?branch=develop
-   :target: https://travis-ci.org/bespohk/watson-cache
-.. |Build StatusM| image:: https://api.travis-ci.org/bespohk/watson-cache.png?branch=master
-   :target: https://travis-ci.org/bespohk/watson-cache
-.. |Pypi| image:: https://pypip.in/v/watson-cache/badge.png
-   :target: https://crate.io/packages/watson-cache/
+.. |Version| image:: https://pypip.in/v/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/
+.. |Downloads| image:: https://pypip.in/d/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/
+.. |Licence| image:: https://pypip.in/license/watson-cache/badge.png
+   :target: https://pypi.python.org/pypi/watson-cache/
