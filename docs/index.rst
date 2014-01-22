@@ -54,10 +54,10 @@ Table of Contents
 
 .. include:: toc.rst.inc
 
-.. |Build Status| image:: https://api.travis-ci.org/Bespohk/watson-cache.png?branch=master
-   :target: https://travis-ci.org/Bespohk/watson-cache
-.. |Coverage Status| image:: https://coveralls.io/repos/bespohk/watson-cache/badge.png
-   :target: https://coveralls.io/r/bespohk/watson-cache
+.. |Build Status| image:: https://api.travis-ci.org/watsonpy/watson-cache.png?branch=master
+   :target: https://travis-ci.org/watsonpy/watson-cache
+.. |Coverage Status| image:: https://coveralls.io/repos/watsonpy/watson-cache/badge.png
+   :target: https://coveralls.io/r/watsonpy/watson-cache
 .. |Version| image:: https://pypip.in/v/watson-cache/badge.png
    :target: https://pypi.python.org/pypi/watson-cache/
 .. |Downloads| image:: https://pypip.in/d/watson-cache/badge.png

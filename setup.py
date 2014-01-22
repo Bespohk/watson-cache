@@ -64,7 +64,7 @@ with open(os.path.join(path, 'requirements.txt')) as f:
 setup(
     name='watson-cache',
     version=watson.cache.__version__,
-    url='http://github.com/bespohk/watson-cache',
+    url='http://github.com/watsonpy/watson-cache',
     description='Caching strategies for the web.',
     long_description=readme,
 
