@@ -1,9 +1,2 @@
-# Unit Test
-pytest
-pytest-cov
-coverage
-coveralls
-
-# Watson
 watson-common >= 1.0.0
 watson-di >= 1.0.0  # only required for tests
