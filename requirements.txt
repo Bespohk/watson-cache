@@ -1,2 +1,2 @@
-watson-common == 1.0.2
+watson-common == 1.1.0
 watson-di == 2.0.0  # only required for tests
