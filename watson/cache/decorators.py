@@ -5,7 +5,7 @@ from watson.common.imports import get_qualified_name
 DEFAULT_CACHE_TYPE = Memory
 
 
-def cache(func=None, timeout=0, key=None):
+def cache(func=None, timeout=0, key=None, cache_type=DEFAULT_CACHE_TYPE):
     """Retrieve a value from the cache
 
     Attempts to retrieve a value from the cache. If the wrapped function
@@ -38,7 +38,7 @@ def cache(func=None, timeout=0, key=None):
     def decorator(func):
         def wrapper(self, *args, **kwargs):
             if not hasattr(self, 'container'):
-                cache_instance = DEFAULT_CACHE_TYPE()
+                cache_instance = cache_type()
             else:
                 cache_config = self.container.get(
                     'application.config')['cache']
