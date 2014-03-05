@@ -2,4 +2,4 @@ pytest
 pytest-cov
 coverage
 coveralls
-watson-di == 2.0.1
+watson-di >= 2.0.1
