@@ -5,8 +5,8 @@ import os
 import pickle
 from tempfile import gettempdir
 from watson.common.imports import get_qualified_name
-from watson.common.contextmanagers import ignored
-with ignored(ImportError):
+from watson.common.contextmanagers import suppress
+with suppress(ImportError):
     import memcache
 
 
@@ -200,7 +200,7 @@ class File(BaseStorage):
         expires = datetime.now() + timedelta(
             seconds=int(timeout)) if timeout else None
         with open(self.__file_path(key), 'wb') as file:
-            with ignored(Exception):
+            with suppress(Exception):
                 pickle.dump((value, expires), file, pickle.HIGHEST_PROTOCOL)
 
     def __getitem__(self, key, default=None):
@@ -211,7 +211,7 @@ class File(BaseStorage):
             return value
 
     def __delitem__(self, key):
-        with ignored(OSError):
+        with suppress(OSError):
             os.unlink(self.__file_path(key))
 
     def expired(self, key):
@@ -233,9 +233,9 @@ class File(BaseStorage):
 
     def _stored(self, key, default=None):
         value, expires = default, None
-        with ignored(OSError):
+        with suppress(OSError):
             with open(self.__file_path(key), 'rb') as file:
-                with ignored(Exception):
+                with suppress(Exception):
                     (value, expires) = pickle.load(file)
         return value, expires
 
