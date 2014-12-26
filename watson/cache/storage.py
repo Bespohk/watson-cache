@@ -8,6 +8,8 @@ from watson.common.imports import get_qualified_name
 from watson.common.contextmanagers import suppress
 with suppress(ImportError):
     import memcache
+with suppress(ImportError):
+    import redis
 
 
 class BaseStorage(object):
@@ -329,8 +331,83 @@ class Memcached(BaseStorage):
         return True if self.get(key) else False
 
     def expired(self, key):
-        return not key in self
+        return key not in self
 
     def __repr__(self):
         return '<{0} servers:{1}>'.format(get_qualified_name(self),
                                           len(self.config['servers']))
+
+
+class Redis(BaseStorage):
+
+    """A cache storage mechanism for storing items in redis.
+
+    Redis cache storage will utilize redis to maintain the cache
+    across multiple servers.
+    redis documentation can be found at https://github.com/andymccurdy/redis-py
+    """
+    client = None
+
+    def __init__(self, config=None):
+        """
+        Initializes the cache.
+
+        Args:
+            config (dict): The config for the cache
+
+        Example:
+
+        .. code-block:: python
+
+            cache = Redis
+        """
+        settings = {'host': 'localhost', 'port': 6379, 'db': 0}
+        if not config:
+            config = {}
+        settings.update(config)
+        self.config = settings
+
+    def __setitem__(self, key, value, timeout=0):
+        self.open()
+        if timeout < 0:
+            del self[key]
+        self.client.set(key, value, timeout)
+
+    def __getitem__(self, key, default=None):
+        self.open()
+        value = self.client.get(key)
+        if not value:
+            return default
+        return value
+
+    def __delitem__(self, key):
+        self.open()
+        return self.client.delete(key)
+
+    def flush(self):
+        self.open()
+        self.client.flushdb()
+        return True
+
+    def open(self):
+        if not self.client:
+            try:
+                self.client = redis.StrictRedis(**self.config)
+            except:
+                raise ImportError('You must have redis installed.')
+
+    def close(self):
+        self.open()
+        self.client.connection_pool.disconnect()
+        self.client = None
+        return True
+
+    def __contains__(self, key):
+        return self.client.exists(key)
+
+    def expired(self, key):
+        return key not in self
+
+    def __repr__(self):
+        return '<{0} db:{1}>'.format(get_qualified_name(self),
+                                     self.config['db'])
