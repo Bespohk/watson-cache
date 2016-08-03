@@ -42,9 +42,5 @@ Todo
    :target: https://travis-ci.org/watsonpy/watson-cache
 .. |Coverage Status| image:: https://coveralls.io/repos/watsonpy/watson-cache/badge.png
    :target: https://coveralls.io/r/watsonpy/watson-cache
-.. |Version| image:: http://badge.kloud51.com/pypi/v/watson-cache.png
-   :target: https://pypi.python.org/pypi/watson-cache/
-.. |Downloads| image:: http://badge.kloud51.com/pypi/d/watson-cache.png
-   :target: https://pypi.python.org/pypi/watson-cache/
-.. |Licence| image:: http://badge.kloud51.com/pypi/license/watson-cache.png
+.. |Version| image:: https://img.shields.io/pypi/v/watson-cache.svg?maxAge=2592000
    :target: https://pypi.python.org/pypi/watson-cache/
