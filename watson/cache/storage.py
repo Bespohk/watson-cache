@@ -319,7 +319,7 @@ class Memcached(BaseStorage):
         if not self.client:
             try:
                 self.client = memcache.Client(self.config['servers'])
-            except:
+            except Exception:
                 raise ImportError('You must have python3-memcached installed.')
 
     def close(self):
@@ -393,7 +393,7 @@ class Redis(BaseStorage):
         if not self.client:
             try:
                 self.client = redis.StrictRedis(**self.config)
-            except:
+            except Exception:
                 raise ImportError('You must have redis installed.')
 
     def close(self):
